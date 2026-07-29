@@ -7,13 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (splash) {
     const seen = localStorage.getItem('symphonia_splash_seen');
     if (seen) {
+      // Repeat visit — hide instantly
       splash.style.display = 'none';
     } else {
+      // First visit — animate in, then fade out
       localStorage.setItem('symphonia_splash_seen', '1');
+      // Trigger logo fade-in on next frame
+      requestAnimationFrame(() => splash.classList.add('visible'));
+      // Fade out the whole splash after 1.7s (logo has 0.8s to fully appear)
+      setTimeout(() => {
+        splash.style.opacity = '0';
+        splash.style.pointerEvents = 'none';
+        setTimeout(() => splash.style.display = 'none', 500);
+      }, 1700);
     }
   }
-
-
 
   // Determine active nav link based on current page
   const page = window.location.pathname.split('/').pop() || 'index.html';
