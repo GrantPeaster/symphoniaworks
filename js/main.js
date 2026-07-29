@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Detect if we're inside the pages/ subdirectory
   const inPages = window.location.pathname.includes('/pages/');
   const prefix  = inPages ? '' : 'pages/';
-  const logoSrc = inPages ? '../images/logo.png' : 'images/logo.png';
+  const logoSrc = inPages ? '../images/logo.jpg' : 'images/logo.jpg';
   const homeHref = inPages ? '../index.html' : 'index.html';
 
   // ── Build Header ────────────────────────────────────────
