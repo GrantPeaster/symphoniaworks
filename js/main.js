@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Splash: first visit only ───────────────────────────
   const splash = document.getElementById('splash');
   if (splash) {
-    const seen = localStorage.getItem('symphonia_splash_seen');
+    const seen = sessionStorage.getItem('symphonia_splash_seen');
     if (seen) {
-      // Repeat visit — hide instantly
+      // Tab already navigated — hide instantly
       splash.style.display = 'none';
     } else {
-      // First visit — animate in, then fade out
-      localStorage.setItem('symphonia_splash_seen', '1');
+      // Fresh tab — animate in, then fade out
+      sessionStorage.setItem('symphonia_splash_seen', '1');
       // Trigger logo fade-in on next frame
       requestAnimationFrame(() => splash.classList.add('visible'));
       // Fade out the whole splash after 1.7s (logo has 0.8s to fully appear)
