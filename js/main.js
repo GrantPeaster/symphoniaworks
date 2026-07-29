@@ -1,5 +1,20 @@
 // ── Symphonia — main.js ──────────────────────────────────
 
+// ── Splash: first visit only ─────────────────────────────
+(function () {
+  const splash = document.getElementById('splash');
+  if (!splash) return;
+
+  const seen = localStorage.getItem('symphonia_splash_seen');
+  if (seen) {
+    // Already visited — remove splash immediately, no animation
+    splash.style.display = 'none';
+  } else {
+    // First visit — let animation run, then mark as seen
+    localStorage.setItem('symphonia_splash_seen', '1');
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Determine active nav link based on current page
