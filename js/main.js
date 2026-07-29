@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = [
     { label: 'What We Do',        href: 'what-we-do.html',   pages: ['what-we-do.html'] },
     { label: 'Hear Our Results',  href: 'results.html',      pages: ['results.html'] },
-    { label: 'Book a Presentation', href: 'book.html',       pages: ['book.html'], cta: true },
+    { label: 'Book a Session', href: 'book.html',       pages: ['book.html'], cta: true },
   ];
 
   // Detect if we're inside the pages/ subdirectory
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
         <div class="footer-right">
           <a class="footer-book" href="${prefix}book.html">Book Us</a>
-          <span class="footer-copy">&copy; ${new Date().getFullYear()} Symphonia. All rights reserved.</span>
+          <span class="footer-copy">&copy; ${new Date().getFullYear()} Symphonia.</span>
         </div>
       </div>
     `;
